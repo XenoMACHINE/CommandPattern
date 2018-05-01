@@ -1,0 +1,17 @@
+
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CommandPattern", "CommandPattern\CommandPattern.csproj", "{DACD7915-60D0-45F1-9A03-EA3B5163CBCC}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DACD7915-60D0-45F1-9A03-EA3B5163CBCC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DACD7915-60D0-45F1-9A03-EA3B5163CBCC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DACD7915-60D0-45F1-9A03-EA3B5163CBCC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DACD7915-60D0-45F1-9A03-EA3B5163CBCC}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal

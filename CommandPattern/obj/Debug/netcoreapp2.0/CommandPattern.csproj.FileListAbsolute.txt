@@ -1,0 +1,11 @@
+/Users/alexandremenielle/Projects/CommandPattern/CommandPattern/obj/Debug/netcoreapp2.0/CommandPattern.csprojResolveAssemblyReference.cache
+/Users/alexandremenielle/Projects/CommandPattern/CommandPattern/obj/Debug/netcoreapp2.0/CommandPattern.csproj.CoreCompileInputs.cache
+/Users/alexandremenielle/Projects/CommandPattern/CommandPattern/obj/Debug/netcoreapp2.0/CommandPattern.AssemblyInfoInputs.cache
+/Users/alexandremenielle/Projects/CommandPattern/CommandPattern/obj/Debug/netcoreapp2.0/CommandPattern.AssemblyInfo.cs
+/Users/alexandremenielle/Projects/CommandPattern/CommandPattern/bin/Debug/netcoreapp2.0/CommandPattern.deps.json
+/Users/alexandremenielle/Projects/CommandPattern/CommandPattern/bin/Debug/netcoreapp2.0/CommandPattern.runtimeconfig.json
+/Users/alexandremenielle/Projects/CommandPattern/CommandPattern/bin/Debug/netcoreapp2.0/CommandPattern.runtimeconfig.dev.json
+/Users/alexandremenielle/Projects/CommandPattern/CommandPattern/bin/Debug/netcoreapp2.0/CommandPattern.dll
+/Users/alexandremenielle/Projects/CommandPattern/CommandPattern/bin/Debug/netcoreapp2.0/CommandPattern.pdb
+/Users/alexandremenielle/Projects/CommandPattern/CommandPattern/obj/Debug/netcoreapp2.0/CommandPattern.dll
+/Users/alexandremenielle/Projects/CommandPattern/CommandPattern/obj/Debug/netcoreapp2.0/CommandPattern.pdb

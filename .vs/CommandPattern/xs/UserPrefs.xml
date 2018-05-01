@@ -1,0 +1,16 @@
+﻿<Properties StartupConfiguration="{DACD7915-60D0-45F1-9A03-EA3B5163CBCC}|Default">
+  <MonoDevelop.Ide.Workbench ActiveDocument="CommandPattern/User.cs">
+    <Files>
+      <File FileName="CommandPattern/Program.cs" Line="10" Column="1" />
+      <File FileName="CommandPattern/User.cs" Line="2" Column="25" />
+      <File FileName="CommandPattern/DBContext.cs" Line="9" Column="47" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.ItemProperties.CommandPattern PreferredExecutionTarget="MonoDevelop.Default" />
+</Properties>
