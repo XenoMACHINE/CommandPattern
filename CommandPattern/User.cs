@@ -9,7 +9,7 @@ namespace CommandPattern
         public int UserId { get; set; }
         private Calculator _calculator = new Calculator();
         private List<Command> _commands = new List<Command>();
-        public int _current = 0;
+        public int _current { get; set; } = 0;
 
         public void Redo(int levels)
         {
