@@ -6,10 +6,10 @@ namespace CommandPattern
     public class User 
     {
         // Initializers
-
+        public int UserId { get; set; }
         private Calculator _calculator = new Calculator();
         private List<Command> _commands = new List<Command>();
-        private int _current = 0;
+        public int _current = 0;
 
         public void Redo(int levels)
         {
@@ -54,6 +54,8 @@ namespace CommandPattern
             _commands.Add(command);
             _current++;
         }
+
+
     }
 
     abstract class Command

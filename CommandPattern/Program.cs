@@ -28,7 +28,16 @@ namespace CommandPattern
 
                 Console.ReadKey();
                 db.Users.Add(user);
-                db.SaveChanges();
+                var count = db.SaveChanges();
+
+                Console.WriteLine("{0} records saved to database", count);
+
+                Console.WriteLine();
+                Console.WriteLine("All blogs in database:");
+                foreach (var usr in db.Users)
+                {
+                    Console.WriteLine(" - {0}", usr._current);
+                }
             }
         }
     }

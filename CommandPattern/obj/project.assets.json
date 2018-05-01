@@ -3197,13 +3197,13 @@
       "projectName": "CommandPattern",
       "projectPath": "/Users/alexandremenielle/Projects/CommandPattern/CommandPattern/CommandPattern.csproj",
       "packagesPath": "/Users/alexandremenielle/.nuget/packages/",
-      "outputPath": "/Users/alexandremenielle/Projects/CommandPattern/CommandPattern/obj",
+      "outputPath": "/Users/alexandremenielle/Projects/CommandPattern/CommandPattern/obj/",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "/Users/alexandremenielle/.config/NuGet/NuGet.Config"
+        "/Users/alexandremenielle/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "netcoreapp2.0"
@@ -3225,19 +3225,18 @@
     "frameworks": {
       "netcoreapp2.0": {
         "dependencies": {
-          "Microsoft.NETCore.App": {
-            "suppressParent": "All",
-            "target": "Package",
-            "version": "2.0",
-            "autoReferenced": true
-          },
           "Microsoft.EntityFrameworkCore.Design": {
             "target": "Package",
-            "version": "2.0.2"
+            "version": "[2.0.2, )"
           },
           "Microsoft.EntityFrameworkCore.Sqlite": {
             "target": "Package",
-            "version": "2.0.2"
+            "version": "[2.0.2, )"
+          },
+          "Microsoft.NETCore.App": {
+            "target": "Package",
+            "version": "[2.0.0, )",
+            "autoReferenced": true
           }
         },
         "imports": [
