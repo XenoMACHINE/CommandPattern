@@ -1,8 +1,8 @@
 ﻿<Properties StartupConfiguration="{DACD7915-60D0-45F1-9A03-EA3B5163CBCC}|Default">
   <MonoDevelop.Ide.Workbench ActiveDocument="CommandPattern/User.cs">
     <Files>
-      <File FileName="CommandPattern/Program.cs" Line="10" Column="1" />
-      <File FileName="CommandPattern/User.cs" Line="2" Column="25" />
+      <File FileName="CommandPattern/Program.cs" Line="22" Column="30" />
+      <File FileName="CommandPattern/User.cs" Line="92" Column="9" />
       <File FileName="CommandPattern/DBContext.cs" Line="9" Column="47" />
     </Files>
   </MonoDevelop.Ide.Workbench>

@@ -20,6 +20,7 @@ namespace CommandPattern
             {
                 if (_current < _commands.Count - 1)
                 {
+
                     Command command = _commands[_current++];
                     command.Execute();
                 }
@@ -54,7 +55,6 @@ namespace CommandPattern
             _commands.Add(command);
             _current++;
         }
-
 
     }
 
