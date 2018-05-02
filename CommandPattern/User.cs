@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace CommandPattern
 {
-    public class User 
+    public class User : DatabaseObject
     {
         // Initializers
         public int UserId { get; set; }
@@ -57,14 +57,6 @@ namespace CommandPattern
         }
 
     }
-
-    abstract class Command
-
-    {
-        public abstract void Execute();
-        public abstract void UnExecute();
-    }
-
 
     class CalculatorCommand : Command
 
