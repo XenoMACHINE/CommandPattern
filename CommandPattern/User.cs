@@ -11,6 +11,8 @@ namespace CommandPattern
         private List<Command> _commands = new List<Command>();
         public int _current { get; set; } = 0;
 
+        public User(){}
+
         public void Redo(int levels)
         {
             Console.WriteLine("\n---- Redo {0} levels ", levels);

@@ -14,5 +14,37 @@ namespace CommandPattern
         {
             optionsBuilder.UseSqlite("Data Source =database.db");
         }
+
+        public void showAll()
+        {
+            Console.WriteLine("------------------- PEOPLES -------------------");
+            showPeoples();
+            Console.WriteLine("-------------------- CARS ---------------------");
+            showCars();
+            Console.WriteLine("-----------------------------------------------");
+
+        }
+
+        public void showUsers(){
+            foreach (User user in Users){
+                Console.WriteLine(user);
+            }
+        }
+
+        public void showPeoples()
+        {
+            foreach (People people in Peoples)
+            {
+                Console.WriteLine(people);
+            }
+        }
+
+        public void showCars()
+        {
+            foreach (Car car in Cars)
+            {
+                Console.WriteLine(car);
+            }
+        }
     }
 }

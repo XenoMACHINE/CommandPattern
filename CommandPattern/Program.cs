@@ -10,29 +10,26 @@ namespace CommandPattern
 
             using (var db = new DBContext())
             {
+                db.showAll();
+
                 People people = new People(name: "Alex");
 
                 Car car = new Car("Mercedes", "Classe A");
 
                 DatabaseManager databaseManager = new DatabaseManager();
                 databaseManager.Request("insert", people);
-                databaseManager.ShowCommands();
 
-                Console.ReadKey();
+                UserInteraction();
                 databaseManager.Undo();
-                databaseManager.ShowCommands();
 
-                Console.ReadKey();
+                UserInteraction();
                 databaseManager.Redo();
-                databaseManager.ShowCommands();
 
-                Console.ReadKey();
+                UserInteraction();
                 databaseManager.Request("insert", car);
-                databaseManager.ShowCommands();
 
-                Console.ReadKey();
+                UserInteraction();
                 databaseManager.Undo(2);
-                databaseManager.ShowCommands();
 
                 //databaseManager.Undo(2);
                 //databaseManager.Redo(2);
@@ -68,5 +65,10 @@ namespace CommandPattern
                 */
             }
         }
-    }
+
+        static void UserInteraction(){
+            Console.Write("Enter to continue ...");
+            Console.ReadKey();
+        }
+     }
 }

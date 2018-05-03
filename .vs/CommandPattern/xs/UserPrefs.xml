@@ -1,15 +1,15 @@
 ﻿<Properties StartupConfiguration="{DACD7915-60D0-45F1-9A03-EA3B5163CBCC}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="CommandPattern/Car.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="CommandPattern/DBContext.cs">
     <Files>
-      <File FileName="CommandPattern/Program.cs" Line="24" Column="41" />
-      <File FileName="CommandPattern/User.cs" Line="21" Column="52" />
+      <File FileName="CommandPattern/Program.cs" Line="13" Column="17" />
+      <File FileName="CommandPattern/User.cs" Line="110" Column="31" />
       <File FileName="CommandPattern/Command.cs" Line="4" Column="27" />
-      <File FileName="CommandPattern/DatabaseObject.cs" Line="4" Column="12" />
-      <File FileName="CommandPattern/People.cs" Line="4" Column="5" />
+      <File FileName="CommandPattern/DatabaseObject.cs" Line="6" Column="29" />
+      <File FileName="CommandPattern/People.cs" Line="15" Column="9" />
       <File FileName="CommandPattern/InsertCommand.cs" Line="20" Column="15" />
-      <File FileName="CommandPattern/DBContext.cs" Line="7" Column="18" />
-      <File FileName="CommandPattern/Car.cs" Line="6" Column="9" />
-      <File FileName="CommandPattern/DatabaseManager.cs" Line="132" Column="14" NotebookId="1" />
+      <File FileName="CommandPattern/DBContext.cs" Line="18" Column="9" />
+      <File FileName="CommandPattern/Car.cs" Line="18" Column="76" />
+      <File FileName="CommandPattern/DatabaseManager.cs" Line="2" Column="25" NotebookId="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />

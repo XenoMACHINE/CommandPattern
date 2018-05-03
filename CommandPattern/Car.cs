@@ -7,6 +7,8 @@ namespace CommandPattern
         public string brand { get; set; }
         public string model { get; set; }
 
+        public Car(){}
+
         public Car(String brand, String model)
         {
             this.brand = brand;

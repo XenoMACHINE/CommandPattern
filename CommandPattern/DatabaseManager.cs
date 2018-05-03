@@ -33,6 +33,7 @@ namespace CommandPattern
                     command.Execute();
                 }
             }
+            ShowCommands();
         }
 
         public void Undo(int levels = 1)
@@ -48,6 +49,7 @@ namespace CommandPattern
                     command.UnExecute();
                 }
             }
+            ShowCommands();
         }
 
         public void Request(string type, DatabaseObject databaseObject)
@@ -59,6 +61,7 @@ namespace CommandPattern
             // Add command to undo list
             _commands.Add(command);
             _current++;
+            ShowCommands();
         }
     }
 
@@ -139,7 +142,7 @@ namespace CommandPattern
                     db.Cars.Add((Car)databaseObject);
                 }
                 var count = db.SaveChanges();
-                Console.WriteLine("{0} records saved to database", count);
+                //Console.WriteLine("{0} records saved to database", count);
             }
         }
 
@@ -158,7 +161,7 @@ namespace CommandPattern
                     db.Cars.Remove((Car)databaseObject);
                 }
                 var count = db.SaveChanges();
-                Console.WriteLine("{0} records saved to database", count);
+                //Console.WriteLine("{0} records saved to database", count);
             }
         }
     }

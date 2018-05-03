@@ -7,6 +7,8 @@ namespace CommandPattern
         public int Id { get; set; }
         public string Name { get; set; }
 
+        public People(){}
+
         public People(String name)
         {
             this.Name = name;
