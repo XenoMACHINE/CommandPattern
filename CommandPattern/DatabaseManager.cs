@@ -10,14 +10,24 @@ namespace CommandPattern
         private Crud _crud = new Crud();
         public int _current = 0;
 
-        public void Redo(int levels)
+        public void ShowCommands(){
+            Console.WriteLine("Current : " + _current);
+            var i = 0;
+            foreach (Command command in _commands){
+                Console.Write(i + " - ");
+                Console.WriteLine(command);
+                i++;
+            }
+        }
+
+        public void Redo(int levels = 1)
         {
             Console.WriteLine("\n---- Redo {0} levels ", levels);
             // Perform redo operations
 
             for (int i = 0; i < levels; i++)
             {
-                if (_current < _commands.Count - 1)
+                if (_current < _commands.Count)
                 {
                     Command command = _commands[_current++];
                     command.Execute();
@@ -25,7 +35,7 @@ namespace CommandPattern
             }
         }
 
-        public void Undo(int levels)
+        public void Undo(int levels = 1)
         {
             Console.WriteLine("\n---- Undo {0} levels ", levels);
             // Perform undo operations
@@ -40,7 +50,7 @@ namespace CommandPattern
             }
         }
 
-        public void Compute(string type, DatabaseObject databaseObject)
+        public void Request(string type, DatabaseObject databaseObject)
         {
             // Create command operation and execute it
             Command command = new CrudCommand(_crud, type, databaseObject);
@@ -62,6 +72,8 @@ namespace CommandPattern
             this._crud = crud;
             this._type = type;
             this._databaseObject = databaseObject;
+
+            //Console.WriteLine(databaseObject.GetType().GetProperties());
         }
 
         public string Type{
@@ -92,6 +104,11 @@ namespace CommandPattern
             ArgumentException("type");
             }
         }
+
+        public override string ToString()
+        {
+            return "[CrudCommand] Crud -"/* + _crud */+ " Type " + _type + " dbObject " + _databaseObject;
+        }
     }
 
     class Crud{
@@ -110,14 +127,16 @@ namespace CommandPattern
         }
 
         private void Insert(DatabaseObject databaseObject){
+            Console.WriteLine("Insert {0}", databaseObject);
+
             using (var db = new DBContext())
             {
                 if (databaseObject is People){
                     db.Peoples.Add((People)databaseObject);
                 }
-                if (databaseObject is User)
+                if (databaseObject is Car)
                 {
-                    db.Users.Add((User)databaseObject);
+                    db.Cars.Add((Car)databaseObject);
                 }
                 var count = db.SaveChanges();
                 Console.WriteLine("{0} records saved to database", count);
@@ -134,9 +153,9 @@ namespace CommandPattern
                 {
                     db.Peoples.Remove((People)databaseObject);
                 }
-                if (databaseObject is User)
+                if (databaseObject is Car)
                 {
-                    db.Users.Remove((User)databaseObject);
+                    db.Cars.Remove((Car)databaseObject);
                 }
                 var count = db.SaveChanges();
                 Console.WriteLine("{0} records saved to database", count);

@@ -11,17 +11,28 @@ namespace CommandPattern
             using (var db = new DBContext())
             {
                 People people = new People(name: "Alex");
-                People people2 = new People(name: "Michel");
-                User user = new User();
-                user.Compute('+', 100);
+
+                Car car = new Car("Mercedes", "Classe A");
 
                 DatabaseManager databaseManager = new DatabaseManager();
-                databaseManager.Compute("insert", people);
-                //databaseManager.Compute("insert", people2);
-                //databaseManager.Compute("insert", user);
+                databaseManager.Request("insert", people);
+                databaseManager.ShowCommands();
+
                 Console.ReadKey();
-                //databaseManager.Compute("delete", people);
-                databaseManager.Undo(1);
+                databaseManager.Undo();
+                databaseManager.ShowCommands();
+
+                Console.ReadKey();
+                databaseManager.Redo();
+                databaseManager.ShowCommands();
+
+                Console.ReadKey();
+                databaseManager.Request("insert", car);
+                databaseManager.ShowCommands();
+
+                Console.ReadKey();
+                databaseManager.Undo(2);
+                databaseManager.ShowCommands();
 
                 //databaseManager.Undo(2);
                 //databaseManager.Redo(2);
