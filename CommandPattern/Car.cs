@@ -17,7 +17,7 @@ namespace CommandPattern
 
         public override string ToString()
         {
-            return "[Car] Id " + Id + " Brand " + brand + " Model " + model;
+            return "[Car] {Id : " + Id + "} {Brand : " + brand + "} {Model : " + model + "}";
         }
     }
 }

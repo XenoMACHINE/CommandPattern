@@ -16,7 +16,7 @@ namespace CommandPattern
 
         public override string ToString()
         {
-            return "[People] Id " + Id + " Name " + Name;
+            return "[People] {Id : " + Id + "} {Name : " + Name + "}";
         }
 
     }

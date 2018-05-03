@@ -15,5 +15,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Remove="EmptyClass.cs" />
+    <Compile Remove="InsertCommand.cs" />
   </ItemGroup>
 </Project>

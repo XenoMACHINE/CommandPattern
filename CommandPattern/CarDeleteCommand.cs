@@ -1,25 +1,18 @@
 ﻿using System;
 namespace CommandPattern
 {
-    public class CarInsertCommand : Command
+    public class CarDeleteCommand : Command
     {
         private Car car;
         private String type;
         private DBContext dBContext = DatabaseManager.GetInstance();
 
-        public CarInsertCommand(Car car){
+        public CarDeleteCommand(Car car)
+        {
             this.car = car;
         }
-        
-        public override void Execute()
-        {
-            type = "Insert";
-            dBContext.Cars.Add(car);
-            dBContext.SaveChanges();
-            Console.WriteLine("\n" + this + "\n");
-        }
 
-        public override void UnExecute()
+        public override void Execute()
         {
             type = "Delete";
             dBContext.Cars.Remove(car);
@@ -27,9 +20,17 @@ namespace CommandPattern
             Console.WriteLine("\n" + this + "\n");
         }
 
+        public override void UnExecute()
+        {
+            type = "Insert";
+            dBContext.Cars.Add(car);
+            dBContext.SaveChanges();
+            Console.WriteLine("\n"+this+"\n");
+        }
+
         public override string ToString()
         {
-            return "[CarInsertCommand] " + type + " " + car;
+            return "[CarDeleteCommand] " + type + " " + car;
         }
     }
 }

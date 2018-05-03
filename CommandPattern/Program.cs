@@ -9,47 +9,31 @@ namespace CommandPattern
         {
 
             DatabaseManager databaseManager = new DatabaseManager();
+            var db = DatabaseManager.GetInstance();
 
-            using (var db = DatabaseManager.GetInstance())
-            {
-                Car car = new Car("Mercedes", "Classe B");
+            Car car = new Car("Mercedes", "Classe B");
 
-                db.showAll();
+            db.showAll();
 
-                databaseManager.ExecCommand(new CarInsertCommand(car));
-                db.showAll();
-                UserInteraction();
+            databaseManager.ExecCommand(new CarInsertCommand(car));
+            db.showAll();
+            UserInteraction();
 
-                databaseManager.Undo();
-                db.showAll();
-                UserInteraction();
-            }
-        }
+            databaseManager.ExecCommand(new CarDeleteCommand(car));
+            db.showAll();
+            UserInteraction();
 
-        static void Version1(){
-            using (var db = new DBContext())
-            {
-                db.showAll();
+            databaseManager.Undo();
+            db.showAll();
+            UserInteraction();
 
-                People people = new People(name: "Alex");
+            databaseManager.Undo();
+            db.showAll();
+            UserInteraction();
 
-                Car car = new Car("Mercedes", "Classe A");
-
-                DatabaseManager databaseManager = new DatabaseManager();
-                databaseManager.Request("insert", people);
-
-                UserInteraction();
-                databaseManager.Undo();
-
-                UserInteraction();
-                databaseManager.Redo();
-
-                UserInteraction();
-                databaseManager.Request("insert", car);
-
-                UserInteraction();
-                databaseManager.Undo(2);
-            }
+            databaseManager.Redo(-1);
+            db.showAll();
+            UserInteraction();
         }
 
         static void UserInteraction(){
