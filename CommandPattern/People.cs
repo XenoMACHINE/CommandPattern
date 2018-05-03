@@ -14,6 +14,13 @@ namespace CommandPattern
             this.Name = name;
         }
 
+        public People(Boolean userinteraction)
+        {
+            Console.WriteLine("Creating new People Object...");
+            Console.Write("Name : ");
+            this.Name = Console.ReadLine();
+        }
+
         public override string ToString()
         {
             return "[People] {Id : " + Id + "} {Name : " + Name + "}";

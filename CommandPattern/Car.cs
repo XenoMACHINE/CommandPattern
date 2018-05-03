@@ -21,6 +21,14 @@ namespace CommandPattern
             this.model = car.model;
         }
 
+        public Car(Boolean userinteraction){
+            Console.WriteLine("Creating new Car Object...");
+            Console.Write("Brand : ");
+            this.brand = Console.ReadLine();
+            Console.Write("Model : ");
+            this.model = Console.ReadLine();
+        }
+
         public override string ToString()
         {
             return "[Car] {Id : " + Id + "} {Brand : " + brand + "} {Model : " + model + "}";

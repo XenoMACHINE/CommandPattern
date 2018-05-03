@@ -1,13 +1,14 @@
 ﻿<Properties StartupConfiguration="{DACD7915-60D0-45F1-9A03-EA3B5163CBCC}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="CommandPattern/DBContext.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="CommandPattern/People.cs">
     <Files>
-      <File FileName="CommandPattern/Program.cs" Line="40" Column="31" />
+      <File FileName="CommandPattern/Program.cs" Line="96" Column="49" />
       <File FileName="CommandPattern/CarInsertCommand.cs" Line="17" Column="31" />
-      <File FileName="CommandPattern/Car.cs" Line="24" Column="42" />
-      <File FileName="CommandPattern/DBContext.cs" Line="28" Column="9" />
+      <File FileName="CommandPattern/Car.cs" Line="24" Column="9" />
+      <File FileName="CommandPattern/DBContext.cs" Line="24" Column="37" />
+      <File FileName="CommandPattern/People.cs" Line="22" Column="26" />
       <File FileName="CommandPattern/DatabaseManager.cs" Line="43" Column="39" NotebookId="1" />
       <File FileName="CommandPattern/CarDeleteCommand.cs" Line="7" Column="24" NotebookId="1" />
-      <File FileName="CommandPattern/CarUpdateCommand.cs" Line="22" Column="39" NotebookId="1" />
+      <File FileName="CommandPattern/CarUpdateCommand.cs" Line="36" Column="10" NotebookId="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />

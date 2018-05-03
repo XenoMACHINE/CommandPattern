@@ -59,6 +59,7 @@ namespace CommandPattern
             {
                 Cars.Remove(car);
             }
+            DatabaseManager.GetInstance().SaveChanges();
         }
     }
 }
