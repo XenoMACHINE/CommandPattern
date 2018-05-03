@@ -16,16 +16,6 @@ namespace CommandPattern
             return dBContext;
         }
 
-        public void ShowCommands(){
-            /*Console.WriteLine("Current : " + _current);
-            var i = 0;
-            foreach (Command command in _commands){
-                Console.Write(i + " - ");
-                Console.WriteLine(command);
-                i++;
-            }*/
-        }
-
         public void Redo(int levels = 1)
         {
             Console.WriteLine("\n---- Redo {0} levels ", levels);
@@ -43,7 +33,6 @@ namespace CommandPattern
                     command.Execute();
                 }
             }
-            ShowCommands();
         }
 
         public void Undo(int levels = 1)
@@ -64,7 +53,6 @@ namespace CommandPattern
                     command.UnExecute();
                 }
             }
-            ShowCommands();
         }
 
         public void ExecCommand(Command command){
@@ -80,7 +68,6 @@ namespace CommandPattern
                 _commands.RemoveAt(i);
             }
 
-            ShowCommands();
         }
     }
 }

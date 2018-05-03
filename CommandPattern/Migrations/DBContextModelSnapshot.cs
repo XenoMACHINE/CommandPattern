@@ -37,23 +37,13 @@ namespace CommandPattern.Migrations
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd();
 
-                    b.Property<string>("Name");
+                    b.Property<string>("Firstname");
+
+                    b.Property<string>("Lastname");
 
                     b.HasKey("Id");
 
                     b.ToTable("Peoples");
-                });
-
-            modelBuilder.Entity("CommandPattern.User", b =>
-                {
-                    b.Property<int>("UserId")
-                        .ValueGeneratedOnAdd();
-
-                    b.Property<int>("_current");
-
-                    b.HasKey("UserId");
-
-                    b.ToTable("Users");
                 });
 #pragma warning restore 612, 618
         }

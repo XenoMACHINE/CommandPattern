@@ -1,14 +1,18 @@
 ﻿<Properties StartupConfiguration="{DACD7915-60D0-45F1-9A03-EA3B5163CBCC}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="CommandPattern/People.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="CommandPattern/MenuManager.cs">
     <Files>
-      <File FileName="CommandPattern/Program.cs" Line="96" Column="49" />
-      <File FileName="CommandPattern/CarInsertCommand.cs" Line="17" Column="31" />
-      <File FileName="CommandPattern/Car.cs" Line="24" Column="9" />
-      <File FileName="CommandPattern/DBContext.cs" Line="24" Column="37" />
-      <File FileName="CommandPattern/People.cs" Line="22" Column="26" />
-      <File FileName="CommandPattern/DatabaseManager.cs" Line="43" Column="39" NotebookId="1" />
-      <File FileName="CommandPattern/CarDeleteCommand.cs" Line="7" Column="24" NotebookId="1" />
-      <File FileName="CommandPattern/CarUpdateCommand.cs" Line="36" Column="10" NotebookId="1" />
+      <File FileName="CommandPattern/Program.cs" Line="18" Column="1" />
+      <File FileName="CommandPattern/Car.cs" Line="23" Column="9" />
+      <File FileName="CommandPattern/CarInsertCommand.cs" Line="25" Column="40" />
+      <File FileName="CommandPattern/CarDeleteCommand.cs" Line="7" Column="24" />
+      <File FileName="CommandPattern/CarUpdateCommand.cs" Line="27" Column="13" />
+      <File FileName="CommandPattern/DBContext.cs" Line="42" Column="9" />
+      <File FileName="CommandPattern/MenuManager.cs" Line="107" Column="48" />
+      <File FileName="CommandPattern/DatabaseManager.cs" Line="71" Column="1" NotebookId="1" />
+      <File FileName="CommandPattern/People.cs" Line="19" Column="35" NotebookId="1" />
+      <File FileName="CommandPattern/PeopleInsertCommand.cs" Line="20" Column="51" NotebookId="1" />
+      <File FileName="CommandPattern/PeopleDeleteCommand.cs" Line="28" Column="51" NotebookId="1" />
+      <File FileName="CommandPattern/PeopleUpdateCommand.cs" Line="14" Column="10" NotebookId="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />

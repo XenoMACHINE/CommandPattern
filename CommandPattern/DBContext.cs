@@ -6,7 +6,6 @@ namespace CommandPattern
 {
     public class DBContext : DbContext
     {
-        public DbSet<User> Users { get; set; }
         public DbSet<People> Peoples { get; set; }
         public DbSet<Car> Cars { get; set; }
 
@@ -23,12 +22,6 @@ namespace CommandPattern
             showCars();
             Console.WriteLine("-----------------------------------------------");
 
-        }
-
-        public void showUsers(){
-            foreach (User user in Users){
-                Console.WriteLine(user);
-            }
         }
 
         public void showPeoples()
@@ -48,9 +41,6 @@ namespace CommandPattern
         }
 
         public void RemoveAll(){
-            foreach(User user in Users){
-                Users.Remove(user);
-            }
             foreach (People people in Peoples)
             {
                 Peoples.Remove(people);
