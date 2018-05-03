@@ -8,6 +8,25 @@ namespace CommandPattern
         static void Main(string[] args)
         {
 
+            DatabaseManager databaseManager = new DatabaseManager();
+
+            using (var db = DatabaseManager.GetInstance())
+            {
+                Car car = new Car("Mercedes", "Classe B");
+
+                db.showAll();
+
+                databaseManager.ExecCommand(new CarInsertCommand(car));
+                db.showAll();
+                UserInteraction();
+
+                databaseManager.Undo();
+                db.showAll();
+                UserInteraction();
+            }
+        }
+
+        static void Version1(){
             using (var db = new DBContext())
             {
                 db.showAll();
@@ -30,39 +49,6 @@ namespace CommandPattern
 
                 UserInteraction();
                 databaseManager.Undo(2);
-
-                //databaseManager.Undo(2);
-                //databaseManager.Redo(2);
-
-                /*db.Peoples.Add(people);
-                var count = db.SaveChanges();
-
-                Console.WriteLine("{0} records saved to database", count);*/
-
-                /*User user = new User();
-
-                user.Compute('+', 100);
-                user.Compute('-', 50);
-                user.Compute('*', 10);
-                user.Compute('/', 2);
-
-                // Undo 4 commands
-
-                user.Undo(4);
-
-                // Redo 3 commands
-
-                user.Redo(3);
-
-                // Wait for user
-
-
-                //Console.ReadKey();
-                db.Users.Add(user);
-                var count = db.SaveChanges();
-
-                Console.WriteLine("{0} records saved to database", count);
-                */
             }
         }
 

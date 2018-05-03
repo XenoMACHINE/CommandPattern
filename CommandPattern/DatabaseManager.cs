@@ -5,10 +5,17 @@ namespace CommandPattern
 {
     public class DatabaseManager
     {
-
+        public static DBContext dBContext = GetInstance();
         private List<Command> _commands = new List<Command>();
         private Crud _crud = new Crud();
         public int _current = 0;
+
+        public static DBContext GetInstance(){
+            if (dBContext == null){
+                dBContext = new DBContext();
+            }
+            return dBContext;
+        }
 
         public void ShowCommands(){
             Console.WriteLine("Current : " + _current);
@@ -61,6 +68,17 @@ namespace CommandPattern
             // Add command to undo list
             _commands.Add(command);
             _current++;
+            ShowCommands();
+        }
+
+        public void ExecCommand(Command command){
+            
+            command.Execute();
+
+            // Add command to undo list
+            _commands.Add(command);
+            _current++;
+
             ShowCommands();
         }
     }

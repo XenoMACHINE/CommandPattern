@@ -19,6 +19,5 @@ namespace CommandPattern
         {
             return "[Car] Id " + Id + " Brand " + brand + " Model " + model;
         }
-
     }
 }
