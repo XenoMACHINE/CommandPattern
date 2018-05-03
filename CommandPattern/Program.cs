@@ -19,6 +19,27 @@ namespace CommandPattern
             db.showAll();
             UserInteraction();
 
+            databaseManager.ExecCommand(new CarUpdateCommand(car, model: "Classe C"));
+            db.showAll();
+            UserInteraction();
+
+            databaseManager.Undo();
+            db.showAll();
+            UserInteraction();
+
+            databaseManager.Undo();
+            db.showAll();
+            UserInteraction();
+
+            databaseManager.Redo();
+            db.showAll();
+            UserInteraction();
+
+            databaseManager.Redo();
+            db.showAll();
+            UserInteraction();
+
+            /*
             databaseManager.ExecCommand(new CarDeleteCommand(car));
             db.showAll();
             UserInteraction();
@@ -33,12 +54,13 @@ namespace CommandPattern
 
             databaseManager.Redo(-1);
             db.showAll();
-            UserInteraction();
+            UserInteraction();*/
         }
 
         static void UserInteraction(){
             Console.Write("Enter to continue ...");
             Console.ReadKey();
         }
+
      }
 }

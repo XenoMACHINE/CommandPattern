@@ -15,6 +15,12 @@ namespace CommandPattern
             this.model = model;
         }
 
+        public Car(Car car){
+            this.Id = car.Id;
+            this.brand = car.brand;
+            this.model = car.model;
+        }
+
         public override string ToString()
         {
             return "[Car] {Id : " + Id + "} {Brand : " + brand + "} {Model : " + model + "}";

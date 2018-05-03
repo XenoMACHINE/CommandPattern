@@ -46,5 +46,19 @@ namespace CommandPattern
                 Console.WriteLine(car);
             }
         }
+
+        public void RemoveAll(){
+            foreach(User user in Users){
+                Users.Remove(user);
+            }
+            foreach (People people in Peoples)
+            {
+                Peoples.Remove(people);
+            }
+            foreach (Car car in Cars)
+            {
+                Cars.Remove(car);
+            }
+        }
     }
 }
