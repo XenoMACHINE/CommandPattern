@@ -16,6 +16,12 @@ namespace CommandPattern
             newCar.Id = car.Id;
         }
 
+        public CarUpdateCommand(Car car, Car newCar)
+        {
+            this.car = car;
+            this.newCar = newCar;
+        }
+
         public override void Execute()
         {
             Console.WriteLine("\n" + this + "\n");

@@ -6,7 +6,7 @@ namespace CommandPattern
     public class DatabaseManager
     {
         public static DBContext dBContext = GetInstance();
-        private List<Command> _commands = new List<Command>();
+        public List<Command> _commands = new List<Command>();
         public int _current = 0;
 
         public static DBContext GetInstance(){
@@ -31,7 +31,7 @@ namespace CommandPattern
             Console.WriteLine("\n---- Redo {0} levels ", levels);
             // Perform redo operations
 
-            if (levels == -1){
+            if (levels == 0){
                 levels = _commands.Count;
             }
 
@@ -51,7 +51,7 @@ namespace CommandPattern
             Console.WriteLine("\n---- Undo {0} levels ", levels);
             // Perform undo operations
 
-            if (levels == -1)
+            if (levels == 0)
             {
                 levels = _commands.Count;
             }
@@ -74,6 +74,11 @@ namespace CommandPattern
             // Add command to undo list
             _commands.Add(command);
             _current++;
+
+            //Delete command after index of inserted Command
+            for (int i = _commands.Count - 1; i >= _current ; i--){
+                _commands.RemoveAt(i);
+            }
 
             ShowCommands();
         }

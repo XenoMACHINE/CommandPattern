@@ -10,54 +10,7 @@ namespace CommandPattern
 
         static void Main(string[] args)
         {
-            
-            AskRemoveAll();
-            db.showAll();
-
             ShowMenu();
-            /*
-            Car car = new Car(userinteraction: true);//new Car("Mercedes", "Classe B");
-
-            databaseManager.ExecCommand(new CarInsertCommand(car));
-            db.showAll();
-            UserInteraction();
-
-            databaseManager.ExecCommand(new CarUpdateCommand(car, model: "Classe C"));
-            db.showAll();
-            UserInteraction();
-
-            databaseManager.Undo();
-            db.showAll();
-            UserInteraction();
-
-            databaseManager.Undo();
-            db.showAll();
-            UserInteraction();
-
-            databaseManager.Redo();
-            db.showAll();
-            UserInteraction();
-
-            databaseManager.Redo();
-            db.showAll();
-            UserInteraction();
-
-
-            databaseManager.ExecCommand(new CarDeleteCommand(car));
-            db.showAll();
-            UserInteraction();
-
-            databaseManager.Undo();
-            db.showAll();
-            UserInteraction();
-
-            databaseManager.Undo();
-            db.showAll();
-            UserInteraction();
-
-            databaseManager.Redo(-1);
-            db.showAll();
-            UserInteraction();*/
         }
 
         static void UserInteraction(){
@@ -66,16 +19,17 @@ namespace CommandPattern
         }
 
         static void AskRemoveAll(){
-            Console.Write("Do you want to clean database ? (y/n) : ");
+            Console.Write("Do you want to clean database and undo list ? (y/n) : ");
             ConsoleKeyInfo result = Console.ReadKey();
             Console.WriteLine("");
             if (result.KeyChar == 'y' || result.KeyChar == 'Y'){
                 DatabaseManager.GetInstance().RemoveAll();
+                databaseManager._commands = new List<Command>();
             }
         }
 
         static char GetResult(){
-            Console.Write("Tape your choice : ");
+            Console.Write("Type your choice : ");
             ConsoleKeyInfo result = Console.ReadKey();
             Console.WriteLine("");
             return result.KeyChar;
@@ -89,6 +43,7 @@ namespace CommandPattern
                               "#     Undo (back) : b      #\n" +
                               "#     Redo (next) : n      #\n" +
                               "#   Show Database : space  #\n" +
+                              "#    Clear Database : c    #\n" +
                               "############################\n");
 
             var key = GetResult();
@@ -98,19 +53,38 @@ namespace CommandPattern
                     InsertObject();
                     break;
                 case 'u':
+                    UpdateObject();
                     break;
                 case 'r':
+                    RemoveObject();
                     break;
                 case 'b':
+                    databaseManager.Undo(ChooseUndoRedo("Undo"));
                     break;
                 case 'n':
+                    databaseManager.Redo(ChooseUndoRedo("Redo"));
                     break;
                 case ' ':
+                    db.showAll();
+                    break;
+                case 'c':
+                    AskRemoveAll();
                     db.showAll();
                     break;
             }
 
             ShowMenu();
+        }
+
+        static int ChooseUndoRedo(string type){
+            Console.Write("How many " + type + " ? (0 for max), press enter for just 1 : ");
+            ConsoleKeyInfo result = Console.ReadKey();
+            Console.WriteLine("");
+            if (result.Key == ConsoleKey.Enter){
+                return 1;
+            }
+            var intValue = (int)Char.GetNumericValue(result.KeyChar);
+            return intValue;
         }
 
         static void InsertObject(){
@@ -131,6 +105,75 @@ namespace CommandPattern
             }
         }
 
+        static (Char,int) SelectObject(){
+            Console.WriteLine("####### SELECT OBJECT #######\n" +
+                              "#         1. People         #\n" +
+                              "#          2. Car           #\n" +
+                              "#############################\n");
+
+            var objectSelected = GetResult();
+            switch (objectSelected)
+            {
+                case '1':
+                    db.showPeoples();
+                    break;
+                case '2':
+                    db.showCars();
+                    break;
+                default:
+                    return ('0', -1);
+            }
+
+            Console.Write("Type Object Id : ");
+            int value = -1;
+            Int32.TryParse(Console.ReadLine(), out value);
+            Console.WriteLine("");
+
+            return (objectSelected,value);
+        }
+
+        static void UpdateObject(){
+
+            var selectObject = SelectObject();
+            var objectSelected = selectObject.Item1;
+            var value = selectObject.Item2;
+            if (value == -1 || objectSelected == '0'){ return; }
+
+            switch (objectSelected)
+            {
+                case '1':
+                    break;
+                case '2':
+                    Car car = db.Cars.Find(value);
+                    if (car == null) { return; }
+                    Car newCar = car.askUpdate();
+                    databaseManager.ExecCommand(new CarUpdateCommand(car, newCar));
+                    break;
+                default:
+                    return;
+            }
+        }
+
+        static void RemoveObject()
+        {
+            var selectObject = SelectObject();
+            var objectSelected = selectObject.Item1;
+            var value = selectObject.Item2;
+            if (value == -1 || objectSelected == '0') { return; }
+
+            switch (objectSelected)
+            {
+                case '1':
+                    break;
+                case '2':
+                    Car car = db.Cars.Find(value);
+                    if (car == null) { return; }
+                    databaseManager.ExecCommand(new CarDeleteCommand(car));
+                    break;
+                default:
+                    return;
+            }
+        }
 
      }
 }
