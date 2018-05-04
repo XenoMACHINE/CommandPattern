@@ -1,18 +1,17 @@
 ﻿<Properties StartupConfiguration="{DACD7915-60D0-45F1-9A03-EA3B5163CBCC}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="CommandPattern/MenuManager.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="CommandPattern/DatabaseManager.cs">
     <Files>
       <File FileName="CommandPattern/Program.cs" Line="18" Column="1" />
-      <File FileName="CommandPattern/Car.cs" Line="23" Column="9" />
-      <File FileName="CommandPattern/CarInsertCommand.cs" Line="25" Column="40" />
-      <File FileName="CommandPattern/CarDeleteCommand.cs" Line="7" Column="24" />
+      <File FileName="CommandPattern/Car.cs" Line="6" Column="23" />
+      <File FileName="CommandPattern/CarInsertCommand.cs" Line="4" Column="34" />
       <File FileName="CommandPattern/CarUpdateCommand.cs" Line="27" Column="13" />
-      <File FileName="CommandPattern/DBContext.cs" Line="42" Column="9" />
-      <File FileName="CommandPattern/MenuManager.cs" Line="107" Column="48" />
-      <File FileName="CommandPattern/DatabaseManager.cs" Line="71" Column="1" NotebookId="1" />
-      <File FileName="CommandPattern/People.cs" Line="19" Column="35" NotebookId="1" />
+      <File FileName="CommandPattern/DBContext.cs" Line="39" Column="39" />
+      <File FileName="CommandPattern/MenuManager.cs" Line="156" Column="27" />
+      <File FileName="CommandPattern/Command.cs" Line="7" Column="17" />
+      <File FileName="CommandPattern/DatabaseManager.cs" Line="60" Column="22" NotebookId="1" />
+      <File FileName="CommandPattern/People.cs" Line="28" Column="42" NotebookId="1" />
       <File FileName="CommandPattern/PeopleInsertCommand.cs" Line="20" Column="51" NotebookId="1" />
       <File FileName="CommandPattern/PeopleDeleteCommand.cs" Line="28" Column="51" NotebookId="1" />
-      <File FileName="CommandPattern/PeopleUpdateCommand.cs" Line="14" Column="10" NotebookId="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />

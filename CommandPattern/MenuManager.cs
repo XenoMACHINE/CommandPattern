@@ -23,6 +23,7 @@ namespace CommandPattern
             {
                 DatabaseManager.GetInstance().RemoveAll();
                 databaseManager._commands = new List<Command>();
+                databaseManager._current = 0;
             }
         }
 
