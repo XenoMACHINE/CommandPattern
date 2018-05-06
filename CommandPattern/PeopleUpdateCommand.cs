@@ -13,6 +13,7 @@ namespace CommandPattern
             this.newPeople = newPeople;
         }
 
+        //Copy old object before update wich allow to redo or undo after
         public override void Execute()
         {
             Console.WriteLine("\n" + this + "\n");

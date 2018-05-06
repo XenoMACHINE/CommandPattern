@@ -3,11 +3,13 @@ using System.Collections.Generic;
 
 namespace CommandPattern
 {
+
+    //Manager with command List and manage them
     public class DatabaseManager
     {
-        public static DBContext dBContext = GetInstance();
-        public List<Command> _commands = new List<Command>();
-        public int _current = 0;
+        public static DBContext dBContext = GetInstance(); //Singeleton of DBContext
+        public List<Command> _commands = new List<Command>(); //List of command
+        public int _current = 0; //index of current command (allow X redos after many undo)
 
         public static DBContext GetInstance(){
             if (dBContext == null){
@@ -16,6 +18,7 @@ namespace CommandPattern
             return dBContext;
         }
 
+        //Redo X times (1 default)
         public void Redo(int levels = 1)
         {
             Console.WriteLine("\n---- Redo {0} levels ", levels);
@@ -35,6 +38,7 @@ namespace CommandPattern
             }
         }
 
+        //Undo X times (1 default)
         public void Undo(int levels = 1)
         {
             Console.WriteLine("\n---- Undo {0} levels ", levels);
@@ -55,6 +59,7 @@ namespace CommandPattern
             }
         }
 
+        //Launch execute method of command and increment current index
         public void ExecCommand(Command command){
             
             command.Execute();

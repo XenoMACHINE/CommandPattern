@@ -16,6 +16,7 @@ namespace CommandPattern
             this.Firstname = firstname;
         }
 
+        //Copy constructor
         public People(People people)
         {
             this.Id = people.Id;
@@ -23,6 +24,7 @@ namespace CommandPattern
             this.Firstname = people.Firstname;
         }
 
+        //Constructor with user interaction
         public People(Boolean userinteraction)
         {
             Console.WriteLine("Updating People Object...");
@@ -32,6 +34,7 @@ namespace CommandPattern
             this.Firstname = Console.ReadLine();
         }
 
+        // Update object method with user interaction
         public People askUpdate()
         {
             var newPeople = new People(this);

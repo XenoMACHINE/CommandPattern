@@ -15,12 +15,14 @@ namespace CommandPattern
             this.model = model;
         }
 
+        //Copy constructor
         public Car(Car car){
             this.Id = car.Id;
             this.brand = car.brand;
             this.model = car.model;
         }
 
+        //Constructor with user interaction
         public Car(Boolean userinteraction){
             Console.WriteLine("Creating new Car Object...");
             Console.Write("Brand : ");
@@ -29,6 +31,7 @@ namespace CommandPattern
             this.model = Console.ReadLine();
         }
 
+        // Update object method with user interaction
         public Car askUpdate(){
             var newCar = new Car(this);
             Console.WriteLine("Updating Car Object...");
