@@ -20,7 +20,7 @@ namespace CommandPattern
         {
             this.Id = people.Id;
             this.Lastname = people.Lastname;
-            this.Firstname = people.Lastname;
+            this.Firstname = people.Firstname;
         }
 
         public People(Boolean userinteraction)
